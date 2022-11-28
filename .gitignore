@@ -1,0 +1,4 @@
+/target
+/.idea
+aoc_rust.iml
+Cargo.lock
