@@ -2,8 +2,8 @@ use aoc_rust::{ read_lines };
 
 fn main() {
     let lines = read_lines(2021, 2);
-    println!("Iteration 1: {}", part1(lines.clone()));
-    println!("Iteration 2: {}", part2(lines.clone()));
+    println!("Part 1: {}", part1(lines.clone()));
+    println!("Part 2: {}", part2(lines.clone()));
 }
 
 fn part1(lines: Vec<String>) -> i32 {
