@@ -9,7 +9,7 @@ pub fn read_string(year: i32, day: i32) -> String {
 
 pub fn read_lines(year: i32, day: i32) -> Vec<String> {
     return read_string(year, day)
-        .split(&['\n', '\r'])
+        .lines()
         .map(| l | l.trim().to_string())
         .collect();
 }
