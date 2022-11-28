@@ -1,4 +1,4 @@
-use aoc_rust::io::{read_lines_as_i32};
+use aoc_rust::{ read_lines_as_i32 };
 
 fn main() {
     let lines = read_lines_as_i32(2021, 1);
