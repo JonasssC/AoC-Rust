@@ -47,7 +47,7 @@ fn calc_rating(mut lines: Vec<String>, most_common: bool) -> i32 {
     while lines.len() > 1 && i < lines[0].len() {
         let count = count_at_index(lines.clone(), i, '1');
 
-        let mut ch = if most_common {
+        let ch = if most_common {
             if count as f32 >= lines.len() as f32/2.0 { '1' } else { '0' }
         } else {
             if count as f32 >= lines.len() as f32/2.0 { '0' } else { '1' }
