@@ -1,6 +1,6 @@
 use aoc_rust::{ read_split_on_empty_line };
 
-#[derive(Clone, Debug)]
+#[derive(Clone)]
 struct Card {
     values: [[i32; 5]; 5],
     marked: [[bool; 5]; 5]
