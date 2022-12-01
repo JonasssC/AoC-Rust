@@ -2,8 +2,6 @@ use aoc_rust::{ read_split_on_empty_line };
 
 fn main() {
     let elfs = read_split_on_empty_line(2022, 1);
-    println!("{:?}", elfs);
-
     println!("Part 1: {}", part1(elfs.clone()));
     println!("Part 2: {}", part2(elfs.clone()));
 }
