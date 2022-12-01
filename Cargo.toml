@@ -5,7 +5,7 @@ edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
-[bins_2021]
+# bins_2021
 [[bin]]
 name = "y2021d01"
 path = "src/y2021/d01/main.rs"
@@ -107,7 +107,7 @@ name = "y2021d25"
 path = "src/y2021/d25/main.rs"
 
 
-[bins_2022]
+# bins_2022
 [[bin]]
 name = "y2022d01"
 path = "src/y2022/d01/main.rs"
