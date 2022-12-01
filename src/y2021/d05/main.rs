@@ -58,7 +58,7 @@ impl Vent {
         ];
     }
 
-    fn mark(&self, field: &mut HashMap::<Point, i32>) {
+    fn mark(&self, field: &mut HashMap<Point, i32>) {
         let step_size = self.step_size();
         let mut p = self.from.clone();
         loop {
