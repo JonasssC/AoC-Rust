@@ -15,13 +15,6 @@ impl Point {
             y: self.y + step_size[1]
         }
     }
-
-    // fn step_back(&self, step_size: [i32; 2]) -> Point {
-    //     Point {
-    //         x: self.x - step_size[0],
-    //         y: self.y - step_size[1]
-    //     }
-    // }
 }
 
 #[derive(Clone, Debug)]
