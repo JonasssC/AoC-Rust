@@ -23,7 +23,6 @@ struct Vent {
     to: Point
 }
 
-
 impl Vent {
     fn parse(str: String) -> Vent {
         let re = Regex::new(r"(?P<from_x>\d+),(?P<from_y>\d+) -> (?P<to_x>\d+),(?P<to_y>\d+)").expect("Invalid RegEx");
