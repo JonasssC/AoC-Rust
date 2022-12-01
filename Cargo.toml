@@ -5,9 +5,209 @@ edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
+[bins_2021]
 [[bin]]
-name = "main"
+name = "y2021d01"
+path = "src/y2021/d01/main.rs"
+
+[[bin]]
+name = "y2021d02"
+path = "src/y2021/d02/main.rs"
+
+[[bin]]
+name = "y2021d03"
+path = "src/y2021/d03/main.rs"
+
+[[bin]]
+name = "y2021d04"
+path = "src/y2021/d04/main.rs"
+
+[[bin]]
+name = "y2021d05"
 path = "src/y2021/d05/main.rs"
+
+[[bin]]
+name = "y2021d06"
+path = "src/y2021/d06/main.rs"
+
+[[bin]]
+name = "y2021d07"
+path = "src/y2021/d07/main.rs"
+
+[[bin]]
+name = "y2021d08"
+path = "src/y2021/d08/main.rs"
+
+[[bin]]
+name = "y2021d09"
+path = "src/y2021/d09/main.rs"
+
+[[bin]]
+name = "y2021d10"
+path = "src/y2021/d10/main.rs"
+
+[[bin]]
+name = "y2021d11"
+path = "src/y2021/d11/main.rs"
+
+[[bin]]
+name = "y2021d12"
+path = "src/y2021/d12/main.rs"
+
+[[bin]]
+name = "y2021d13"
+path = "src/y2021/d13/main.rs"
+
+[[bin]]
+name = "y2021d14"
+path = "src/y2021/d14/main.rs"
+
+[[bin]]
+name = "y2021d15"
+path = "src/y2021/d15/main.rs"
+
+[[bin]]
+name = "y2021d16"
+path = "src/y2021/d16/main.rs"
+
+[[bin]]
+name = "y2021d17"
+path = "src/y2021/d17/main.rs"
+
+[[bin]]
+name = "y2021d18"
+path = "src/y2021/d18/main.rs"
+
+[[bin]]
+name = "y2021d19"
+path = "src/y2021/d19/main.rs"
+
+[[bin]]
+name = "y2021d20"
+path = "src/y2021/d20/main.rs"
+
+[[bin]]
+name = "y2021d21"
+path = "src/y2021/d21/main.rs"
+
+[[bin]]
+name = "y2021d22"
+path = "src/y2021/d22/main.rs"
+
+[[bin]]
+name = "y2021d23"
+path = "src/y2021/d23/main.rs"
+
+[[bin]]
+name = "y2021d24"
+path = "src/y2021/d24/main.rs"
+
+[[bin]]
+name = "y2021d25"
+path = "src/y2021/d25/main.rs"
+
+
+[bins_2022]
+[[bin]]
+name = "y2022d01"
+path = "src/y2022/d01/main.rs"
+
+[[bin]]
+name = "y2022d02"
+path = "src/y2022/d02/main.rs"
+
+[[bin]]
+name = "y2022d03"
+path = "src/y2022/d03/main.rs"
+
+[[bin]]
+name = "y2022d04"
+path = "src/y2022/d04/main.rs"
+
+[[bin]]
+name = "y2022d05"
+path = "src/y2022/d05/main.rs"
+
+[[bin]]
+name = "y2022d06"
+path = "src/y2022/d06/main.rs"
+
+[[bin]]
+name = "y2022d07"
+path = "src/y2022/d07/main.rs"
+
+[[bin]]
+name = "y2022d08"
+path = "src/y2022/d08/main.rs"
+
+[[bin]]
+name = "y2022d09"
+path = "src/y2022/d09/main.rs"
+
+[[bin]]
+name = "y2022d10"
+path = "src/y2022/d10/main.rs"
+
+[[bin]]
+name = "y2022d11"
+path = "src/y2022/d11/main.rs"
+
+[[bin]]
+name = "y2022d12"
+path = "src/y2022/d12/main.rs"
+
+[[bin]]
+name = "y2022d13"
+path = "src/y2022/d13/main.rs"
+
+[[bin]]
+name = "y2022d14"
+path = "src/y2022/d14/main.rs"
+
+[[bin]]
+name = "y2022d15"
+path = "src/y2022/d15/main.rs"
+
+[[bin]]
+name = "y2022d16"
+path = "src/y2022/d16/main.rs"
+
+[[bin]]
+name = "y2022d17"
+path = "src/y2022/d17/main.rs"
+
+[[bin]]
+name = "y2022d18"
+path = "src/y2022/d18/main.rs"
+
+[[bin]]
+name = "y2022d19"
+path = "src/y2022/d19/main.rs"
+
+[[bin]]
+name = "y2022d20"
+path = "src/y2022/d20/main.rs"
+
+[[bin]]
+name = "y2022d21"
+path = "src/y2022/d21/main.rs"
+
+[[bin]]
+name = "y2022d22"
+path = "src/y2022/d22/main.rs"
+
+[[bin]]
+name = "y2022d23"
+path = "src/y2022/d23/main.rs"
+
+[[bin]]
+name = "y2022d24"
+path = "src/y2022/d24/main.rs"
+
+[[bin]]
+name = "y2022d25"
+path = "src/y2022/d25/main.rs"
+
 
 [dependencies]
 regex = "1"
