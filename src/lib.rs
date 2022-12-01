@@ -32,8 +32,8 @@ pub fn read_lines_split_on_empty_line(year: i32, day: i32) -> Vec<Vec<String>> {
     return read_split_on_empty_line(year, day)
         .iter()
         .map(| g | g.lines()
-                            .map(|  l | l.trim().to_string())
-                            .collect()
+                    .map(|  l | l.trim().to_string())
+                    .collect()
         )
         .collect();
 }
