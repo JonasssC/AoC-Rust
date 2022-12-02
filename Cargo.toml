@@ -34,11 +34,19 @@ path = "src/y2021/d06/main.rs"
 name = "y2021d07"
 path = "src/y2021/d07/main.rs"
 
+[[bin]]
+name = "y2021d08"
+path = "src/y2021/d08/main.rs"
+
 
 # bins_2022
 [[bin]]
 name = "y2022d01"
 path = "src/y2022/d01/main.rs"
+
+[[bin]]
+name = "y2022d02"
+path = "src/y2022/d02/main.rs"
 
 
 [dependencies]
