@@ -20,18 +20,8 @@ fn part1(lines: Vec<String>) -> i32 {
 
     for line in lines {
         let (opp_c, you_c) = get_plays(line);
-        let opp = match opp_c {
-            'A' => 1,
-            'B' => 2,
-            'C' => 3,
-             _  => panic!("Invalid opponent")
-        };
-        let you = match you_c {
-            'X' => 1,
-            'Y' => 2,
-            'Z' => 3,
-            _  => panic!("Invalid opponent")
-        };
+        let opp = ['A', 'B', 'C'].iter().position(| &c | c == opp_c ).unwrap() as i32 + 1;
+        let you = ['X', 'Y', 'Z'].iter().position(| &c | c == you_c ).unwrap() as i32 + 1;
 
         let res = (you - opp + 3) % 3;
 
@@ -52,18 +42,8 @@ fn part2(lines: Vec<String>) -> i32 {
 
     for line in lines {
         let (opp_c, res_c) = get_plays(line);
-        let opp = match opp_c {
-            'A' => 1,
-            'B' => 2,
-            'C' => 3,
-            _  => panic!("Invalid opponent")
-        };
-        let res = match res_c {
-            'X' => 2,
-            'Y' => 0,
-            'Z' => 1,
-            _  => panic!("Invalid opponent")
-        };
+        let opp = ['A', 'B', 'C'].iter().position(| &c | c == opp_c ).unwrap() as i32 + 1;
+        let res = ['Y', 'Z', 'X'].iter().position(| &c | c == res_c ).unwrap() as i32;
 
         let you = (res + opp - 1) % 3 + 1;
         if res == 1 {
