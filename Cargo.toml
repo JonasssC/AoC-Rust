@@ -48,6 +48,10 @@ path = "src/y2022/d01/main.rs"
 name = "y2022d02"
 path = "src/y2022/d02/main.rs"
 
+[[bin]]
+name = "y2022d03"
+path = "src/y2022/d03/main.rs"
+
 
 [dependencies]
 regex = "1"

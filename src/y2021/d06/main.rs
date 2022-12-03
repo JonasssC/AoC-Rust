@@ -1,4 +1,4 @@
-use aoc_rust::{ read_split_on_comma_as_i32 };
+use aoc_rust::util::input::read_split_on_comma_as_i32;
 use std::collections::HashMap;
 
 fn main() {

@@ -1,4 +1,4 @@
-use aoc_rust::{ read_lines };
+use aoc_rust::util::input::read_lines;
 use std::collections::HashMap;
 use regex::Regex;
 

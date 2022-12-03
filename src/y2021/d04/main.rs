@@ -1,4 +1,4 @@
-use aoc_rust::{ read_split_on_empty_line };
+use aoc_rust::util::input::read_split_on_empty_line;
 
 #[derive(Clone)]
 struct Card {

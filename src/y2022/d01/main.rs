@@ -1,4 +1,4 @@
-use aoc_rust::{ read_lines_split_on_empty_line_as_i32 };
+use aoc_rust::util::input::read_lines_split_on_empty_line_as_i32;
 
 fn main() {
     let elfs = read_lines_split_on_empty_line_as_i32(2022, 1);

@@ -1,4 +1,4 @@
-use aoc_rust::read_lines;
+use aoc_rust::util::input::read_lines;
 
 static NUMS: [&'static [char]; 10] = [
     &['a', 'b', 'c', 'e', 'f', 'g'],

@@ -1,4 +1,4 @@
-use aoc_rust::{ read_lines };
+use aoc_rust::util::input::read_lines;
 
 fn main() {
     let lines = read_lines(2021, 3);
