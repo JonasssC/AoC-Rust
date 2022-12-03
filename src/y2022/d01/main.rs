@@ -7,25 +7,17 @@ fn main() {
 }
 
 fn part1(elfs: Vec<Vec<i32>>) -> i32 {
-    let mut most = 0;
-    for elf in elfs.iter() {
-        let n = elf.iter().sum();
-        if n > most {
-            most = n;
-        }
-    }
-    return most;
+    return elfs.iter()
+        .map(| elf | elf.iter().sum())
+        .max().unwrap();
 }
 
 fn part2(elfs: Vec<Vec<i32>>) -> i32 {
-    let mut weights: Vec<i32> = Vec::new();
-
-    for elf in elfs.iter() {
-        weights.push(elf.iter().sum());
-    }
+    let mut weights: Vec<i32> = elfs.iter()
+        .map(| elf | elf.iter().sum())
+        .collect();
 
     weights.sort();
-    weights.reverse();
 
-    return weights[0] + weights[1] + weights[2];
+    return weights[weights.len()-3..].iter().sum();
 }
