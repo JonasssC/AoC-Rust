@@ -13,6 +13,6 @@ macro_rules! common_chars {
             }
             res = common;
         )*
-        res
+        res.chars().collect::<Vec<char>>()
     }}
 }

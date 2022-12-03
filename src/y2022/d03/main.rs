@@ -21,7 +21,7 @@ fn part1(lines: Vec<String>) -> i32 {
 
     for line in lines.iter() {
         let (first_half, second_half) = line.split_at(line.len() / 2);
-        let c = common_chars!(first_half, second_half).chars().nth(0).expect("No common char found");
+        let c = common_chars!(first_half, second_half)[0];
         res += char_to_priority(c);
     }
 
@@ -32,7 +32,7 @@ fn part2(lines: Vec<String>) -> i32 {
     let mut res = 0;
 
     for group in group_by_n(lines, 3) {
-        let c = common_chars!(&group[0], &group[1], &group[2]).chars().nth(0).expect("No common char found");
+        let c = common_chars!(&group[0], &group[1], &group[2])[0];
         res += char_to_priority(c);
     }
 
