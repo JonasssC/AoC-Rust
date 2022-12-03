@@ -11,7 +11,7 @@ fn char_to_priority(c: char) -> i32 {
     return if c.is_uppercase() {
         c as i32 - 'A' as i32 + 27
     } else {
-        c as i32 as i32 - 'a' as i32 as i32 + 1
+        c as i32 - 'a' as i32 + 1
     }
 }
 
