@@ -1,4 +1,7 @@
-use aoc_rust::util::input::read_lines_split_on_empty_line_as_i32;
+use aoc_rust::util::{
+    input::read_lines_split_on_empty_line_as_i32,
+    math::max_n
+};
 
 fn main() {
     let elfs = read_lines_split_on_empty_line_as_i32(2022, 1);
@@ -13,11 +16,9 @@ fn part1(elfs: Vec<Vec<i32>>) -> i32 {
 }
 
 fn part2(elfs: Vec<Vec<i32>>) -> i32 {
-    let mut weights: Vec<i32> = elfs.iter()
+    let weights: Vec<i32> = elfs.iter()
         .map(| elf | elf.iter().sum())
         .collect();
 
-    weights.sort();
-
-    return weights[weights.len()-3..].iter().sum();
+    return max_n(weights, 3).iter().sum();
 }
