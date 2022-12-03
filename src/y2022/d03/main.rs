@@ -1,5 +1,4 @@
 use aoc_rust::util::input::read_lines;
-use aoc_rust::util::vector::group_by_n;
 use aoc_rust::common_chars;
 
 fn main() {
@@ -31,7 +30,7 @@ fn part1(lines: Vec<String>) -> i32 {
 fn part2(lines: Vec<String>) -> i32 {
     let mut res = 0;
 
-    for group in group_by_n(lines, 3) {
+    for group in lines.chunks(3) {
         let c = common_chars!(&group[0], &group[1], &group[2])[0];
         res += char_to_priority(c);
     }
