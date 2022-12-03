@@ -56,8 +56,6 @@ fn part1(lines: Vec<String>) -> i32 {
 fn part2(lines: Vec<String>) -> i32 {
     let mut res = 0;
 
-    println!("{:?}", group_by_n(lines.clone(), 3));
-
     for group in group_by_n(lines, 3) {
         let c = common_char_3(&group[0], &group[1], &group[2]);
         res += char_to_priority(c);
