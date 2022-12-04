@@ -23,7 +23,7 @@ struct PairAssignment {
 }
 
 impl PairAssignment {
-    fn new(line: &str) -> PairAssignment {
+    fn parse(line: &str) -> PairAssignment {
         let matches = regex_parse_as_i32(line, r"(\d+)-(\d+),(\d+)-(\d+)");
 
         PairAssignment {
@@ -38,14 +38,10 @@ impl PairAssignment {
     }
 
     fn overlaps(&self) -> bool {
-        for i in self.elf_1.from..self.elf_1.to+1 {
-            for j in self.elf_2.from..self.elf_2.to+1 {
-                if i == j {
-                    return true;
-                }
-            }
-        }
-        return false;
+        self.elf_1.contains(&Assignment { to: self.elf_2.to, from: self.elf_2.to })
+            || self.elf_1.contains(&Assignment { to: self.elf_2.from, from: self.elf_2.from })
+            || self.elf_2.contains(&Assignment { to: self.elf_1.to, from: self.elf_1.to })
+            || self.elf_2.contains(&Assignment { to: self.elf_1.from, from: self.elf_1.from })
     }
 }
 
@@ -57,14 +53,14 @@ fn main() {
 
 fn part1(lines: Vec<String>) -> usize {
     lines.iter()
-        .map(| line | PairAssignment::new(line))
+        .map(| line | PairAssignment::parse(line))
         .filter(| p | p.contains())
         .count()
 }
 
 fn part2(lines: Vec<String>) -> usize {
     lines.iter()
-        .map(| line | PairAssignment::new(line))
+        .map(| line | PairAssignment::parse(line))
         .filter(| p | p.overlaps())
         .count()
 }
