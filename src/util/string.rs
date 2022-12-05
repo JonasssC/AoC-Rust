@@ -19,19 +19,6 @@ macro_rules! common_chars {
     }}
 }
 
-pub fn regex_parse_as_strings(s: &str, regex_s: &str) -> Vec<String> {
-    let re = Regex::new(regex_s).expect("Invalid RegEx");
-    let caps = re.captures(s).unwrap();
-
-    let mut res: Vec<String> = Vec::new();
-
-    for i in 1..caps.len() {
-        res.push(caps.get(i).unwrap().as_str().to_string());
-    }
-
-    return res;
-}
-
 pub fn regex_parse<T: FromStr>(s: &str, regex_s: &str) -> Vec<T> where <T as FromStr>::Err: Debug {
     let re = Regex::new(regex_s).expect("Invalid RegEx");
     let caps = re.captures(s).unwrap();
