@@ -33,12 +33,10 @@ fn flash_octo(octos: &mut Vec<Vec<i32>>, row: usize, col: usize, flash_count: &m
         octos[row][col] = -100;
         *flash_count += 1;
 
-        for i in 0..3 {
-            for j in 0..3 {
-                if !(i == 1 && j == 1) && is_in_field(octos, row as i32 - 1 + i as i32, col as i32 - 1 + j as i32) {
-                    octos[row + i - 1][col + j - 1] += 1;
-                    flash_octo(octos, row + i - 1, col + j - 1, flash_count);
-                }
+        for step in [(-1, -1), (0, -1), (1, -1), (-1, 0), (1, 0), (-1, 1), (0, 1), (1, 1)] {
+            if is_in_field(octos, row as i32 + step.0, col as i32 + step.1) {
+                octos[(row as i32 + step.0) as usize][(col as i32 + step.1) as usize] += 1;
+                flash_octo(octos, (row as i32 + step.0) as usize, (col as i32 + step.1) as usize, flash_count);
             }
         }
     }
