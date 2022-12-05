@@ -43,7 +43,7 @@ impl Instruction {
                 mv: nums[0],
                 from: nums[1],
                 to: nums[2]
-            })
+            });
         }
 
         return instructions;
