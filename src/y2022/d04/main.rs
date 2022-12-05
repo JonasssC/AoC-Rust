@@ -1,5 +1,5 @@
 use aoc_rust::util::input::read_lines;
-use aoc_rust::util::string::regex_parse_as_i32;
+use aoc_rust::util::string::regex_parse;
 
 struct Assignment {
     from: i32,
@@ -24,7 +24,7 @@ struct PairAssignment {
 
 impl PairAssignment {
     fn parse(line: &str) -> PairAssignment {
-        let matches = regex_parse_as_i32(line, r"(\d+)-(\d+),(\d+)-(\d+)");
+        let matches = regex_parse::<i32>(line, r"(\d+)-(\d+),(\d+)-(\d+)");
 
         PairAssignment {
             elf_1: { Assignment::new(matches[0], matches[1])},

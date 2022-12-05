@@ -1,3 +1,5 @@
+use std::fmt::Debug;
+use std::str::FromStr;
 use regex::Regex;
 
 #[macro_export]
@@ -17,7 +19,7 @@ macro_rules! common_chars {
     }}
 }
 
-pub fn regex_parse(s: &str, regex_s: &str) -> Vec<String> {
+pub fn regex_parse_as_strings(s: &str, regex_s: &str) -> Vec<String> {
     let re = Regex::new(regex_s).expect("Invalid RegEx");
     let caps = re.captures(s).unwrap();
 
@@ -30,14 +32,15 @@ pub fn regex_parse(s: &str, regex_s: &str) -> Vec<String> {
     return res;
 }
 
-pub fn regex_parse_as_i32(s: &str, regex_s: &str) -> Vec<i32> {
-    return regex_parse(s, regex_s).iter()
-        .map(| m | m.parse::<i32>().unwrap())
-        .collect();
-}
+pub fn regex_parse<T: FromStr>(s: &str, regex_s: &str) -> Vec<T> where <T as FromStr>::Err: Debug {
+    let re = Regex::new(regex_s).expect("Invalid RegEx");
+    let caps = re.captures(s).unwrap();
 
-pub fn regex_parse_as_usize(s: &str, regex_s: &str) -> Vec<usize> {
-    return regex_parse(s, regex_s).iter()
-        .map(| m | m.parse::<usize>().unwrap())
-        .collect();
+    let mut res: Vec<T> = Vec::new();
+
+    for i in 1..caps.len() {
+        res.push(caps.get(i).unwrap().as_str().parse::<T>().unwrap());
+    }
+
+    return res;
 }

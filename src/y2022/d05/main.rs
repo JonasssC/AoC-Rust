@@ -1,5 +1,5 @@
 use aoc_rust::util::input::read_lines_split_on_empty_line;
-use aoc_rust::util::string::regex_parse_as_usize;
+use aoc_rust::util::string::regex_parse;
 
 #[derive(Clone, Debug)]
 struct Crane {
@@ -38,7 +38,7 @@ impl Instruction {
     fn parse(lines: Vec<String>) -> Vec<Instruction> {
         let mut instructions: Vec<Instruction> = Vec::new();
         for line in lines.iter() {
-            let nums = regex_parse_as_usize(line, r"move (\d+) from (\d+) to (\d+)");
+            let nums = regex_parse::<usize>(line, r"move (\d+) from (\d+) to (\d+)");
             instructions.push(Instruction {
                 mv: nums[0],
                 from: nums[1],
