@@ -1,4 +1,5 @@
 use aoc_rust::util::input::read_lines_split_on_empty_line;
+use aoc_rust::util::string::regex_parse_as_usize;
 
 #[derive(Clone, Debug)]
 struct Crane {
@@ -37,11 +38,11 @@ impl Instruction {
     fn parse(lines: Vec<String>) -> Vec<Instruction> {
         let mut instructions: Vec<Instruction> = Vec::new();
         for line in lines.iter() {
-            let split_line = line.split_whitespace().collect::<Vec<&str>>();
+            let nums = regex_parse_as_usize(line, r"move (\d+) from (\d+) to (\d+)");
             instructions.push(Instruction {
-                mv: split_line[1].parse::<usize>().unwrap(),
-                from: split_line[3].parse::<usize>().unwrap(),
-                to: split_line[5].parse::<usize>().unwrap()
+                mv: nums[0],
+                from: nums[1],
+                to: nums[2]
             })
         }
 
@@ -81,9 +82,9 @@ fn part2(mut cranes: Vec<Crane>, instructions: Vec<Instruction>) -> String {
             moving.push(cranes[instruction.from - 1].crates.pop().unwrap());
         }
 
-        for c in moving.iter().rev() {
-            cranes[instruction.to - 1].crates.push(*c);
-        }
+        moving.reverse();
+
+        cranes[instruction.to - 1].crates.append(&mut moving);
     }
 
     let mut res = String::from("");

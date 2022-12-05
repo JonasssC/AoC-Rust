@@ -35,3 +35,9 @@ pub fn regex_parse_as_i32(s: &str, regex_s: &str) -> Vec<i32> {
         .map(| m | m.parse::<i32>().unwrap())
         .collect();
 }
+
+pub fn regex_parse_as_usize(s: &str, regex_s: &str) -> Vec<usize> {
+    return regex_parse(s, regex_s).iter()
+        .map(| m | m.parse::<usize>().unwrap())
+        .collect();
+}
