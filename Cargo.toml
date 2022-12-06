@@ -50,6 +50,10 @@ path = "src/y2021/d10/main.rs"
 name = "y2021d11"
 path = "src/y2021/d11/main.rs"
 
+[[bin]]
+name = "y2021d12"
+path = "src/y2021/d12/main.rs"
+
 
 # bins_2022
 [[bin]]
@@ -72,6 +76,11 @@ path = "src/y2022/d04/main.rs"
 name = "y2022d05"
 path = "src/y2022/d05/main.rs"
 
+[[bin]]
+name = "y2022d06"
+path = "src/y2022/d06/main.rs"
+
 
 [dependencies]
 regex = "1"
+substring = "1.4.5"
