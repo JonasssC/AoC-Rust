@@ -15,8 +15,8 @@ fn part2(code: String) -> usize {
 }
 
 fn solve(code: String, size: usize) -> usize {
-    'outerloop: for i in 0..code.len()-size {
-        let sub = code.chars().collect::<Vec<char>>()[i..i+size].to_vec();
+    'outerloop: for i in size..code.len() {
+        let sub = code.chars().collect::<Vec<char>>()[i-size..i].to_vec();
 
         for j in 0..size {
             if sub.iter().filter(| &&c | sub[j] == c).count() != 1 {
@@ -24,7 +24,7 @@ fn solve(code: String, size: usize) -> usize {
             }
         }
 
-        return i + size;
+        return i;
     }
 
     0
