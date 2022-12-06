@@ -18,8 +18,8 @@ fn solve(code: String, size: usize) -> usize {
     'outerloop: for i in size..code.len() {
         let sub = code.chars().collect::<Vec<char>>()[i-size..i].to_vec();
 
-        for j in 0..size {
-            if sub.iter().filter(| &&c | sub[j] == c).count() != 1 {
+        for ch in sub.iter() {
+            if sub.iter().filter(| &c | ch == c).count() != 1 {
                 continue 'outerloop;
             }
         }
