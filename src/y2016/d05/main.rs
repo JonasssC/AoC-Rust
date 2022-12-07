@@ -2,10 +2,9 @@ use md5::{ Md5, Digest };
 use substring::Substring;
 use aoc_rust::util::input::read_string;
 
-
 fn main() {
     let door_id = read_string(2016, 5);
-    // println!("Part 1: {}", part1(door_id.clone()));
+    println!("Part 1: {}", part1(door_id.clone()));
     println!("Part 2: {}", part2(door_id.clone()));
 }
 
