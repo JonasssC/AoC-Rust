@@ -5,6 +5,12 @@ edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
+# bins_2016
+[[bin]]
+name = "y2016d01"
+path = "src/y2016/d01/main.rs"
+
+
 # bins_2021
 [[bin]]
 name = "y2021d01"
