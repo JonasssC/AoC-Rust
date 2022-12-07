@@ -31,3 +31,7 @@ pub fn regex_parse<T: FromStr>(s: &str, regex_s: &str) -> Vec<T> where <T as Fro
 
     return res;
 }
+
+pub fn count_char(s: String, c: char) -> usize {
+    s.chars().filter(| &ch | ch == c).count()
+}
