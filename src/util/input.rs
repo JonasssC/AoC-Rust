@@ -61,3 +61,14 @@ pub fn read_split_on_comma_as_i32(year: i32, day: i32) -> Vec<i32> {
         .map(| l | l.parse::<i32>().unwrap())
         .collect();
 }
+
+pub fn read_as_matrix_of_digits(year: i32, day: i32) -> Vec<Vec<u32>> {
+    return read_lines(year, day)
+        .iter()
+        .map(| l | l
+            .chars()
+            .map(| c | c as u32 - '0' as u32)
+            .collect::<Vec<u32>>()
+        )
+        .collect();
+}
