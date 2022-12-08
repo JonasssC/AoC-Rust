@@ -1,4 +1,6 @@
+use std::fmt::Debug;
 use std::fs::read_to_string;
+use std::str::FromStr;
 
 pub fn read_string(year: i32, day: i32) -> String {
     let path = format!("src/y{}/d{:0>2}/input.txt", year, day);
@@ -62,13 +64,15 @@ pub fn read_split_on_comma_as_i32(year: i32, day: i32) -> Vec<i32> {
         .collect();
 }
 
-pub fn read_as_matrix_of_digits(year: i32, day: i32) -> Vec<Vec<u32>> {
+pub fn read_as_matrix<T: FromStr>(year: i32, day: i32, chunk_size: usize) -> Vec<Vec<T>> where <T as FromStr>::Err: Debug {
     return read_lines(year, day)
         .iter()
-        .map(| l | l
-            .chars()
-            .map(| c | c as u32 - '0' as u32)
-            .collect::<Vec<u32>>()
+        .map(| l | l.chars()
+            .collect::<Vec<char>>()
+            .chunks(chunk_size)
+            .map(| c | c.iter().collect::<String>())
+            .map(| s | s.parse::<T>().unwrap())
+            .collect::<Vec<T>>()
         )
         .collect();
 }

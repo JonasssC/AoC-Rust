@@ -1,8 +1,8 @@
-use aoc_rust::util::input::read_as_matrix_of_digits;
+use aoc_rust::util::input::read_as_matrix;
 use aoc_rust::util::matrix::is_in_field;
 
 fn main() {
-    let field = read_as_matrix_of_digits(2022, 8);
+    let field = read_as_matrix::<u32>(2022, 8, 1);
     println!("Part 1: {}", part1(field.clone()));
     println!("Part 2: {}", part2(field.clone()));
 }
