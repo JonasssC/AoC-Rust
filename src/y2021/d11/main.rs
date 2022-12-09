@@ -1,12 +1,7 @@
-use aoc_rust::util::input::read_lines;
+use aoc_rust::util::input::read_as_matrix;
 
 fn main() {
-    let octos: Vec<Vec<i32>> = read_lines(2021, 11).iter()
-        .map(| l | l.chars()
-            .map(| c | c as i32 - '0' as i32)
-            .collect()
-        )
-        .collect();
+    let octos = read_as_matrix::<i32>(2021, 11, 1);
     println!("Part 1: {}", part1(octos.clone()));
     println!("Part 2: {}", part2(octos.clone()));
 }
