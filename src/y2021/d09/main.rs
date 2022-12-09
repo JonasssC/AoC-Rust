@@ -1,15 +1,9 @@
 use std::collections::HashSet;
-use aoc_rust::util::input::read_lines;
+use aoc_rust::util::input::read_as_matrix;
 use aoc_rust::util::math::max_n;
 
 fn main() {
-    let matrix: Vec<Vec<i32>> = read_lines(2021, 9)
-        .iter()
-        .map(| l | l.chars()
-            .map(| c | c.to_string().parse::<i32>().unwrap())
-            .collect::<Vec<i32>>()
-        )
-        .collect();
+    let matrix = read_as_matrix::<i32>(2021, 9, 1);
     println!("Part 1: {}", part1(matrix.clone()));
     println!("Part 2: {}", part2(matrix.clone()));
 }
