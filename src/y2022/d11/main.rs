@@ -24,7 +24,7 @@ impl Monkey {
                         .map(| n | n.parse::<i64>().unwrap())
                         .collect(),
                     operation: regex_parse::<String>(&lines[2], r"  Operation: new = (.+) (\+|\*) (.+)"),
-                    test_divisible_by: regex_parse::<i64>(&lines[3], r"Test: divisible by (\d+)")[0].clone(),
+                    test_divisible_by: regex_parse::<i64>(&lines[3], r"Test: divisible by (\d+)")[0],
                     test_true_to: regex_parse::<usize>(&lines[4], r"If true: throw to monkey (\d+)")[0],
                     test_false_to: regex_parse::<usize>(&lines[5], r"If false: throw to monkey (\d+)")[0],
                 }
