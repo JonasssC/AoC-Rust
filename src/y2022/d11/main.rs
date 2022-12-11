@@ -48,13 +48,12 @@ fn perform_operation(operation: String, old: i64) -> i64 {
 fn main() {
     let line_groups = read_lines_split_on_empty_line(2022, 11);
     let monkeys = Monkey::parse(line_groups.clone());
-    println!("{} - {}", line_groups.len(), monkeys.len());
     println!("Part 1: {}", part1(monkeys.clone()));
     println!("Part 2: {}", part2(monkeys.clone()));
 }
 
 fn part1(mut monkeys: Vec<Monkey>) -> usize {
-    let mut inspect_count = [0; 8].to_vec();
+    let mut inspect_count: Vec<usize> = (0..monkeys.len()).map(| _ | 0).collect();
 
     for _ in 0..20 {
         for i in 0..monkeys.len() {
@@ -111,11 +110,11 @@ fn gcd(first: i64, second: i64) -> i64 {
 
 // FUCKING INEFFICIENT LANG
 fn part2(mut monkeys: Vec<Monkey>) -> usize {
-    let mut inspect_count = [0; 8].to_vec();
+    let mut inspect_count: Vec<usize> = (0..monkeys.len()).map(| _ | 0).collect();
 
     let multiple = least_common_multiple(monkeys.clone());
 
-    for round in 0..10000 {
+    for _ in 0..10000 {
         for i in 0..monkeys.len() {
             inspect_count[i] += monkeys[i].items.len();
             for j in 0..monkeys[i].items.len() {
@@ -130,10 +129,7 @@ fn part2(mut monkeys: Vec<Monkey>) -> usize {
             }
             monkeys[i].items.clear();
         }
-        println!("{round}");
     }
-
-    println!("{inspect_count:?}");
 
     let max_2 = max_n(inspect_count, 2);
     max_2[0] * max_2[1]
