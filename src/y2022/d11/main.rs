@@ -32,15 +32,15 @@ impl Monkey {
         }
         res
     }
-}
 
-fn perform_operation(operation: Vec<String>, old: i64) -> i64 {
-    let n1 = if &operation[0] == "old" { old } else { operation[0].parse::<i64>().unwrap() };
-    let n2 = if &operation[2] == "old" { old } else { operation[2].parse::<i64>().unwrap() };
-    if &operation[1] == "+" {
-        n1 + n2
-    } else {
-        n1 * n2
+    fn do_operation(&self, old: i64) -> i64 {
+        let n1 = if &self.operation[0] == "old" { old.clone() } else { self.operation[0].parse::<i64>().unwrap() };
+        let n2 = if &self.operation[2] == "old" { old.clone() } else { self.operation[2].parse::<i64>().unwrap() };
+        if &self.operation[1] == "+" {
+            n1 + n2
+        } else {
+            n1 * n2
+        }
     }
 }
 
@@ -58,7 +58,7 @@ fn part1(mut monkeys: Vec<Monkey>) -> usize {
         for i in 0..monkeys.len() {
             inspect_count[i] += monkeys[i].items.len();
             for j in 0..monkeys[i].items.len() {
-                let mut a = perform_operation(monkeys[i].operation.clone(), monkeys[i].items[j].clone());
+                let mut a = monkeys[i].do_operation(monkeys[i].items[j].clone());
                 a /= 3;
                 let to = if a % monkeys[i].clone().test_divisible_by == 0 {
                     monkeys[i].test_true_to
@@ -117,7 +117,7 @@ fn part2(mut monkeys: Vec<Monkey>) -> usize {
         for i in 0..monkeys.len() {
             inspect_count[i] += monkeys[i].items.len();
             for j in 0..monkeys[i].items.len() {
-                let mut a = perform_operation(monkeys[i].operation.clone(), monkeys[i].items[j].clone());
+                let mut a = monkeys[i].do_operation(monkeys[i].items[j].clone());
                 a %= multiple;
                 let to = if a % monkeys[i].clone().test_divisible_by == 0 {
                     monkeys[i].test_true_to
