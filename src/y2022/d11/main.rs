@@ -107,7 +107,6 @@ fn gcd(first: i64, second: i64) -> i64 {
     }
 }
 
-// FUCKING INEFFICIENT LANG
 fn part2(mut monkeys: Vec<Monkey>) -> usize {
     let mut inspect_count: Vec<usize> = (0..monkeys.len()).map(| _ | 0).collect();
 
