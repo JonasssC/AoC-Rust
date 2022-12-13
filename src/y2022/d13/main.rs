@@ -1,6 +1,5 @@
-use std::cmp::{max, min, Ordering};
-use json::{Array, JsonValue};
-use md5::digest::typenum::private::IsGreaterPrivate;
+use std::cmp::{min, Ordering};
+use json::JsonValue;
 use aoc_rust::util::input::read_lines_split_on_empty_line;
 
 fn main() {
