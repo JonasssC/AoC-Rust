@@ -142,9 +142,18 @@ path = "src/y2022/d10/main.rs"
 name = "y2022d11"
 path = "src/y2022/d11/main.rs"
 
+[[bin]]
+name = "y2022d12"
+path = "src/y2022/d12/main.rs"
+
+[[bin]]
+name = "y2022d13"
+path = "src/y2022/d13/main.rs"
+
 
 [dependencies]
 regex = "1"
 substring = "1.4.5"
 md-5 = "0.10.5"
 hex = "0.4.3"
+json = "0.12.4"

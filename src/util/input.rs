@@ -24,10 +24,10 @@ pub fn read_lines_as_i32(year: i32, day: i32) -> Vec<i32> {
 }
 
 pub fn read_split_on_empty_line(year: i32, day: i32) -> Vec<String> {
-    return read_string(year, day)
+    read_string(year, day).replace("\r", "")
         .split("\n\n")
         .map(| l | l.to_string())
-        .collect();
+        .collect()
 }
 
 pub fn read_lines_split_on_empty_line(year: i32, day: i32) -> Vec<Vec<String>> {
